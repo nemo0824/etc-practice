@@ -83,8 +83,9 @@ public class A_Break {
 				
 				for(int i=1; i<=num; i++) {
 					System.out.print(i + " ");
-				}
-				break;
+					
+				}break;
+				
 			}else {
 				System.out.println("잘못입력했습니다 다시 입력해주세요");
 			}

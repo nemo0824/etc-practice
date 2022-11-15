@@ -28,6 +28,7 @@ public class B_While {
 			System.out.println("안녕하세요");
 		}
 		int i=0; //초기식
+		
 		while(i<5) { //조건식
 			System.out.println("안녕하세요");
 			i++; //증감식
@@ -46,6 +47,7 @@ public class B_While {
 				System.out.print(i + " " );
 			}
 		}
+		
 		int i=1;
 		while(i < 10) {
 			if(i%2 ==1) {
