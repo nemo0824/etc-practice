@@ -1,6 +1,8 @@
 package com.kh.practice.run;
 
 import com.kh.array.*;
+import com.kh.practice.dimension.*;;
+
 
 public class Run {
 
@@ -31,7 +33,19 @@ public class Run {
 //		cda.method4();	
 //		cda.method5();
 //		cda.method6();
-		cda.method7();
+//		cda.method7();
+		
+		DimensionPractice dp = new DimensionPractice();
+//		dp.practice1();
+//		dp.practice2();
+//		dp.practice3();
+//		dp.practice4();
+//		dp.practice5();
+//		dp.practice6();
+//		dp.practice7();
+//		dp.practice8();
+		dp.practice9();
+
 	}
 
 }

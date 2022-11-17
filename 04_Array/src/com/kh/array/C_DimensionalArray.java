@@ -192,12 +192,13 @@ public class C_DimensionalArray {
 
 			for (int j = 0; j < arr[i].length; j++) {
 				if (i == 0) {
-					System.out.print("영어 점수 : ");
+					System.out.print("영어 점수 : "+ arr[i][j]);
+					System.out.println();
 
 				}
 				if (i == 1) {
-					System.out.print("국어 점수 : ");
-					
+					System.out.print("국어 점수 : "+ arr[i][j]);
+					System.out.println();
 				}
 				
 
