@@ -3,7 +3,15 @@ package com.kh.example.practice3.model.vo;
 public class Circle {
 	//필드부
 	private static final double PI = 3.14;
-	private int radius = 1;
+	private int radius ;
+	
+	{   //*1
+		//*2
+		//*3
+		//*4
+		radius = 5;
+	}
+	
 	
 	//생성자부
 	public Circle() {
