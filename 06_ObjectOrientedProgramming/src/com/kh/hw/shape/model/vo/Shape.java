@@ -4,7 +4,7 @@ public class Shape {
 	private int type;
 	private double height;
 	private double width;
-	private String color;
+	private String color = "white";
 
 	public Shape() {
 
@@ -28,6 +28,10 @@ public class Shape {
 
 	public void setWidth(double width) {
 		this.width = width;
+	}
+	
+	public void setColor(String color) {
+		this.color =color;
 	}
 
 	public int getType() {

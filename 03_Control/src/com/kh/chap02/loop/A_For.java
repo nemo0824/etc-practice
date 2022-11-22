@@ -54,8 +54,8 @@ public class A_For {
 //		System.out.println("야호");
 //	}
 	
-	for(int i =1; i<5; i++) {
-		System.out.println("무야호~");
+	for(int i =1; i<=5; i++) {
+		System.out.println(i+ "*" +i +"=" +(i*i));
 	}
 	
 	for(int i=1; i<10; i+=2) {

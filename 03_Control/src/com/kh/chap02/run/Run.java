@@ -6,7 +6,7 @@ public class Run {
 		
 		
 		A_For af = new A_For();
-//		af.method1();
+		af.method1();
 //		af.method2();
 //		af.method3();
 //		af.method4();
@@ -21,7 +21,7 @@ public class Run {
 //		af.method13();
 //		af.method14();
 //		af.method15();
-		af.method16();
+	//	af.method16();
 		
 	}
 	

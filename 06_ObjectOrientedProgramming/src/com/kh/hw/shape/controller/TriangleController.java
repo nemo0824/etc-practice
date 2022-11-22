@@ -4,21 +4,20 @@ import com.kh.hw.shape.model.vo.Shape;
 
 public class TriangleController {
 
-	Shape s  = new Shape();
+	private Shape s  = new Shape();
 	
 	
 public double calcArea(double height, double width) {
-	s.setHeight(height);
-	s.setWidth(width);
 	
-	return width * height;
+	s = new Shape(3,height, width);
+	return width * height/2;
 }
 
 public void paintColor (String color) {
-	
+	s.setColor(color);
 }
 
 public String print() {
-	return "사각형" + s.information();
+	return "삼각형" + s.information();
 }
 }
