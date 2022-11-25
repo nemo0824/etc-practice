@@ -1,17 +1,17 @@
 package com.kh.practice.point.controller;
-
-import com.kh.practice.point.model.vo.Rectangle;
+import com.kh.practice.point.model.vo.*;
 
 public class RectangleController {
 
 	private Rectangle r = new Rectangle();
 	public String calcArea(int x, int y, int height, int width) {
-		return "면적 : "+ width * height;
+		r = new Rectangle(x,y,height,width);
+		return r.toString() + "/"+ width * height;
 		
 	}
 	
 	public String calcPerimeter(int x, int y, int height, int width) {
-		return "둘레 : " + 2*(width + height);
+		return r.toString()+"/"+ 2*(width + height);
 	}
 	
 }

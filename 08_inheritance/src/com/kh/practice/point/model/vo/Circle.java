@@ -8,7 +8,7 @@ public Circle() {
 }
 
 public Circle(int x, int y, int radius) {
-	super();
+	super(x,y);
 	this.radius = radius;
 
 }
@@ -24,7 +24,7 @@ public void setRadius(int radius) {
 
 public String toString() {
 	
-	return "x : " + x +", y :" + y + "radius" +radius ;
+	return super.toString() +"radius" +radius;
 }
 	
 

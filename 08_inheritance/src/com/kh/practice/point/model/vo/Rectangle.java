@@ -1,6 +1,6 @@
 package com.kh.practice.point.model.vo;
 
-public class Rectangle {
+public class Rectangle extends Point {
 	private int width;
 	private int height;
 
@@ -33,7 +33,7 @@ public class Rectangle {
 	
 	
 	public String toString() {
-		return "x : " + x +", y :" + y + "width" + width + "height" +height ;
+		return super.toString() +"width" +width+ "height" +height;
 	}
 	
 	
