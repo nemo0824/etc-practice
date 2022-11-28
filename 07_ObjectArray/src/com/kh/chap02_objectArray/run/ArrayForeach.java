@@ -71,11 +71,11 @@ public class ArrayForeach {
 	Scanner sc = new Scanner(System.in);
 	String series =sc.nextLine();
 	
-	int count =0;
+	int count =0; //검색 호출시
 	
 	for(Phone phone:phones) {
-	if(phone.getSeries().equals(series)) {
-		count++;
+	if(phone.getSeries().equals(series)) { //같은지 비교
+		count++; //같을시 증가시켜서 
 		System.out.println(phone.getName() +phone.getSeries()+" 폰의 가격은 " +phone.getPrice() + "원 입니다");
 		break; 
 	
