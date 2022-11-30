@@ -2,6 +2,7 @@ package com.kh.exception.run;
 
 import com.kh.exception.controller.A_UncheckedException;
 import com.kh.exception.controller.B_CheckedException;
+import com.kh.exception.controller.C_CustomException;
 
 public class ExceptionRun {
 
@@ -33,10 +34,14 @@ public class ExceptionRun {
 		
 //		aue.method1();
 //		aue.method2();
-		aue.method3();
+//		aue.method3();
 		
 		B_CheckedException bce = new B_CheckedException();
-		bce.method1();
+//		bce.method1();
+		
+		
+		//throw : throw뒤에 있는 예외를 강제로 발생시킴.
+		throw new C_CustomException("예외가 발생했습니다.");
 	}
 
 }

@@ -15,7 +15,12 @@ public class B_CheckedException {
 	 */
 	
 	public void method1() {
-		method2();
+		try {
+			method2();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public void method2() throws IOException {
 		//Scanner와 같이 키보드로 값을 입력받을수 있는 객체(단 , 문자열로만 가능)
@@ -43,4 +48,15 @@ public class B_CheckedException {
 		
 	}
 	
+	/*
+	 * 
+	 * 				예외 발생 시점 									예외 처리
+	 * RunrimeException 프로그램 실행시 => 런타임 에러(컴파일 에러x)		필수 아님 -> uncheckedException(조건문 또는 예외처리 구문사용)
+	 * IOEException		그 외 		=> 컴파일 에러 				필수 => checked Exception(반드시 예외처리 해결)
+	 * 				
+	 * 
+	 * 
+	 * 
+	 * 
+	 */
 }
