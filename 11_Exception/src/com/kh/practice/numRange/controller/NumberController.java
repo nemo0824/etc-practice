@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.kh.practice.numRange.exception.NumRangeException;
 
-public class NumberController {
+public class NumberController{
 
 	
 	public NumberController() {
@@ -13,22 +13,22 @@ public class NumberController {
 	
 	public boolean checkDouble(int num1, int num2) throws NumRangeException {
 	Scanner sc = new Scanner(System.in);
-	
-	if(num1/num2==0) {
-		boolean checkDouble = true;
-		System.out.print(num1 + "은(는) " + num2 + "의 배수인가?" +checkDouble);
-	}else {
-		boolean checkDouble = false;
-		System.out.print(num1 + "은(는) " + num2 + "의 배수인가?" +checkDouble);
-	}
-		
+	boolean result= false;
+	if(num1>=1 && num1 <= 100 && num2 >=1 && num2 <=100) {
+		if(num1%num2 ==0) {
+			result = true;
+
+		}	
 	}
 	
-	
+	return result;
+	}
 }
 
 
+
 //public C_CustomException() {
+
 //	
 //}
 //
