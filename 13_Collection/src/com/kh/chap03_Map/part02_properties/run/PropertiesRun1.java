@@ -11,9 +11,7 @@ public class PropertiesRun1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] sArr = new String[3];
-		System.out.println(sArr);
-		System.out.println(sArr[0]);
+	
 		
 		//properties : Map 계열 ==> key, value 세트로 저장.
 		// 				단, properties의 특징 : key, value 모두 String으로 제한 되어있음.
