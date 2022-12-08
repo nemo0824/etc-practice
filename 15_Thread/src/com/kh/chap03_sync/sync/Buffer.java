@@ -18,6 +18,7 @@ public class Buffer {
 	public synchronized void getData() {
 		
 		while(empty) {
+			
 			try {
 				//스레드를 일시 정지상태로만든다
 				wait();
