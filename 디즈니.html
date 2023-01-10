@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>디즈니 홈페이지</title>
+    <style>
+       body{
+        background-color: black;
+        color: white;
+       } 
+    div {
+        
+        box-sizing: border-box;
+        border: 1px solid blue;
+        
+        
+      }       
+    
+        
+    #footer{
+        height: 50%;
+        margin:auto;
+    }
+
+   
+    #content{
+        height: 30%;
+        margin: auto;
+    }
+
+    
+
+    #header{
+        height:50%;
+        margin: auto;
+    }
+
+    #header_1{
+        width: 50%;
+        float:left
+        
+    }
+    #header_2{
+        width: 100%;
+        
+    }
+
+    #content_1{
+        width: 50%;
+        float:right
+    }
+    
+    #content_2{
+        width:50%;
+        
+    }
+    .headerimg{
+        position: relative;
+
+    }
+    
+    .logo{
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+    .email_text{
+        position: absolute;
+        top: 5px;
+        right: 12px;    
+    }
+    
+        
+    </style>
+    
+</head>
+<body>
+    <div class="wrap">
+        <img src="resources/image/logo.jpg.svg"alt="" id="logo" width="20%" height="" margin: auto;>
+        <img src="resources/image/header.jpg" alt="" id= "headerimg"width="100%" height="">
+        <form>
+          <div id="email_text">    
+          <input type="email" name="email" div id="search_btn" placeholder="이메일 주소"><input type="submit" value="구독하기">
+            </form>        
+        </div>
+    </div>
+        
+        <div id="header"></div>
+          
+            <div id="header_1">header_1</div>
+            <div id="header_2">header_2</div>
+            
+         
+        <div id="content"></div> 
+            <div id="content_1">content_1</div>
+            <div id="content_2">content_2</div>
+
+        
+           
+        <div id="footer">footer</div>
+        
+    </div>
+</body>
+</html>
