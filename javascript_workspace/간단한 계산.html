@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+   <h3>Practice2</h3>
+   <table>
+      <tr>
+         <td>
+            <input type="text" id="first" size=8 value="">
+               <select id="operator">
+                  <option value="+">+</option>
+                  <option value="-">-</option>
+                  <option value="*">*</option>
+                  <option value="/">/</option>
+                  <option value="%">%</option>
+               </select>
+               <input type="text" id="second"  size=8 value="">
+               <input type="button" id="submit" size=3 value="=" onclick="calc()">
+               <input type="text" id="result" size=8 value =""readonly = "readonly">
+         </td>
+      </tr>
+   </table>
+   <script>
+      function calc(){
+         var operator=document.getElementById("operator").value;
+         var first = document.getElementById("first").value;
+         var second = document.getElementById("second").value;
+         
+         var result;
+         console.log(operator); 
+         switch(operator){
+         case "+": result = Number(first) + Number(second);
+               console.log(result);
+               document.getElementById("result").value = result; break;
+               
+         case "-": result = Number(first) - Number(second);
+               document.getElementById("result").value = result; break;
+               
+         case "*": result = Number(first) * Number(second);
+               document.getElementById("result").value = result; break;
+         case "/": 
+               if(second != 0){
+                  result = Number(first) / Number(second);
+                  document.getElementById("result").value = result; break;
+                  }
+                  else{
+                     document.getElementById("result").style.color="white";
+                     document.getElementById("result").style.backgroundColor="red";
+                     document.getElementById("result").value = "연산불가"; break;
+                  }
+         case "%": 
+               if(second != 0){
+                  result = Number(first) % Number(second);
+                  document.getElementById("result").value = result; break;
+                  }
+                  else{
+                     document.getElementById("result").style.color="white";
+                     document.getElementById("result").style.backgroundColor="red";
+                     document.getElementById("result").value = "연산불가"; break;
+                  }
+         default : break;
+         }
+      }
+   </script>
+
+</body>
+</html>
