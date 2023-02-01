@@ -5,49 +5,626 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차가 필요한 모든 순간, 쏘카</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/scroll.css">
+    <style>
+
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+header_2{
+    width: 1000px;
+    height: 1000px;
+
+}
+
+.header-wrapper{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo-img{
+    width: 112px;
+    height: 30px;
+    background-image: url(../img/logo-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 112px 23px;
+}
+
+.hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+}
+/* 햄버거 버튼 */
+.hamburger-button{
+    width: 36px;
+    height: 14px;
+    cursor: pointer;
+}
+
+.hamburger-button span{
+    position: absolute;
+    display: block;
+    width: 26px;
+    height: 3px;
+    background-color: #00B8FF;
+}
+
+.button-bottom{
+    margin: 11px 0 0 10px;
+}
+
+.hamburger-container{
+    display: none;
+}
+
+/* 본문 */
+.intro-container{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.intro{
+    margin: 100px auto;
+    width: 800px;
+}
+
+.intro-title{
+    font-size: 35px;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-weight: bold;
+    color: #374553;
+    transition: .5s;
+}
+
+.intro-title::after{
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00B8FF;
+    margin-left: 5px;
+}
+
+.intro-text{
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    font-weight: bold;
+    color: #aaa;
+    margin-top: 16px;
+    transition: .5s;
+}
+
+.intro-img{
+    padding: 50px 0;
+    transition: .5s;
+}
+
+.intro-img img{
+    max-width: 800px;
+    max-height: 600px;
+    width: 100%;
+    height: auto;
+}
+
+.random-user-container{
+    position: relative;
+    width: 100%;
+    height: 444px;
+    padding: 64px 0 80px 0;
+    background-color: #F7F8F9;
+    box-sizing: border-box;
+}
+
+.random-user{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.random-user h2{
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #aaa;
+    z-index: 2;
+}
+
+.blue-text{
+    color: #00B8FF;
+}
+
+.random-up{
+    font-weight: bold;
+}
+
+.random-user-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00B8FF;
+    transform: skewX(-30deg) translateX(70%);
+    top: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+
+footer{
+    width: 100%;
+    padding: 40px 18px 100px;
+    background-color: #28323C;
+    box-sizing: border-box;
+}
+
+.footer-wrapper{
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sns-links{
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    column-gap: 10px;
+}
+
+.sns-icon-img img{
+    width: 30px;
+    height: 30px;
+}
+
+.footer-nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.footer-nav li{
+    margin: 0 20px 8px 0;
+}
+
+.footer-nav li a{
+    font-size: 15px;
+    color: #C5C8CE;
+}
+
+.footer-nav li .accent{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.corp-area{
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.corp-left, .corp-right{
+    width: 50%;
+}
+
+.corp-left dl{
+    display: flex;
+}
+
+.corp-left dd{
+    margin-left: 2px;
+}
+
+.corp-left dl, .corp-right ul{
+    font-size: 13px;
+    line-height: 1.7;
+    color: #646F7C;
+}
+
+.corp-right li a{
+    color: #C5C8CE;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 3px;
+}
+
+
+.app-img{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/i-appicon.svg);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    border-radius: 12px;
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+    opacity: 0;
+    transition: .5s;
+}
+
+.socar-download{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    transition: .5s;
+}
+
+.socar-download::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    top: 50%;
+    transform: translate(10px, -50%);
+}
+
+
+.download-app-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 36px;
+    background-color: #00B8FF;
+    transform: skewX(-30deg) translateX(0);
+    z-index: -1;
+    transition: .5s;
+}
+
+
+
+    header{
+        height: 52px;
+        padding: 0 18px;
+    }
+
+    .header-wrapper{
+        height: 52px;
+    }
+
+    .main-logo-img{
+        width: 100px;
+        height: 30px;
+        background-size: 100px 20px;
+    }
+
+
+    .main-title{
+        background-image: url(../img/main_visual_mobile.jpg);
+        background-position: top;
+    }
+
+    .title-text{
+        font-size: 40px;
+    }
+
+
+    .intro-container{
+        padding: 0 22px;
+    }
+
+
+    .random-user-container{
+        height: 304px;
+    }
+    
+    .random-user h2{
+        font-size: 25px;
+    }
+
+
+
+    footer{
+        padding: 40px 18px 72px;
+    }
+
+    .footer-nav li{
+        margin: 0 20px 4px 0;
+    }
+
+    .footer-nav li a{
+        font-size: 13px;
+    }
+
+    .corp-area{
+        flex-wrap: wrap;
+    }
+
+    .corp-left, .corp-right{
+        width: 100%;
+    }
+
+    .corp-right{
+        margin-top: 16px;
+    }
+
+    .corp-left dl, .corp-right ul{
+        font-size: 12px;
+    }
+
+
+    .download-app{
+        width: 100%;
+        height: 56px;
+    }
+
+    .app-img{
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+        left: 24px;
+        border-radius: 8px;
+    }
+
+
+
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.slide {
+  /* layout */
+  display: flex;
+  flex-wrap: nowrap;
+  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
+  overflow: hidden;
+
+  /* position */
+  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  position: relative;
+
+  /* size */
+  width: 100%;
+
+  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
+  user-select: none;
+}
+.slide_item {
+  /* layout */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
+  position: relative;
+  left: 0px;
+
+  /* size */
+  width: 100%;
+  height: 300px;
+  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
+  flex-shrink: 0;
+
+  /* transition */
+  transition: left 0.15s;
+}
+.slide_button {
+  /* layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* position */
+  position: absolute;
+  /* 버튼이 중앙에 위치하게 하기위해 계산 */
+  top: calc(50% - 16px);
+
+  /* size */
+  width: 32px;
+  height: 32px;
+
+  /* style */
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+  
+}
+.slide_next_button {
+  right: 10px;
+
+}
+
+/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+.slide_item.item1 {
+   width: 100%;
+   height: auto;
+}
+.slide_item.item2 {
+    width: 100%;
+    height: auto;
+}
+.slide_item.item3 {
+    
+    height: auto;
+    
+}
+.slide_item.item4 {
+    
+    height: auto;
+}
+.slide_item.item5 {
+    
+    height: auto;
+}
+
+/* 페이지네이션 스타일 */
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+  /* layout */
+  display: flex;
+  gap: 5px;
+
+  /* position */
+  position: absolute;
+  bottom: 0;
+  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+  /* 현재 슬라이드 색상은 투명도 없이 */
+  color: #7fb5ff;
+}
+
+.slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
+}
+    </style>
 </head>
 <body>
     <header>
         <div class="header-wrapper">
             <div class="main-logo">
                 <a href="#">
-                    <figure class="main-logo-img"></figure>
+                    <div class="main-logo-img"></div>
                     <h1 class="hidden">SOCAR</h1>
                 </a>
             </div>
             <div class="hamburger-button">
                 <span class="button-top"></span>
+
                 <span class="button-bottom"></span>
             </div>
         </div>
         <div class="hamburger-container">
-            <ul class="hamburger-menu-one">
+            <ul class="hamburger-menu-1">
                 <li><a href="#">이용 안내</a></li>
                 <li><a href="#">요금 안내</a></li>
                 <li><a href="#">혜택 안내</a></li>
                 <li><a href="#">쏘카존 개설 신청</a></li>
             </ul>
-            <ul class="hamburger-menu-two">
+            <ul class="hamburger-menu-2">
                 <li><a href="#">쏘카의 서비스</a></li>
                 <li class="indent"><a href="#">쏘카 비즈니스</a></li>
                 <li class="indent"><a href="#">쏘카 플랜</a></li>                
             </ul>
-            <ul class="hamburger-menu-three">
+            <ul class="hamburger-menu-3">
                 <li><a href="#">회사소개</a></li>
                 <li><a href="#">공고</a></li>
             </ul>
         </div>
     </header>
-    <main>
-        <section class="main-title">
-            <h2 class="title-text sa-title mv-top-title">
-                차가 필요한<br>
-                모든 순간, 쏘카
-            </h2>
-        </section>
+    <header_2>
+        <div class="slide slide_wrap">
+            <div class="slide_item item1">
+                <img src="img/usp_e.jpg">
+            </div>
+            <div class="slide_item item2">
+                <img src="img/usp_d.jpg">
+            </div>
+            <div class="slide_item item3">
+                <img src="img/usp_a.jpg">
+            </div>
+            <div class="slide_item item4">
+                <img src="img/usp_b.jpg">
+            </div>
+            <div class="slide_item item5">
+                <img src="img/usp_c.jpg">
+            </div>
+            <div class="slide_prev_button slide_button">◀</div>
+            <div class="slide_next_button slide_button">▶</div>
+            <ul class="slide_pagination"></ul>
+          </div>
+        </header_2>
+         
         <section class="intro-container">
             <div class="intro">
                 <div class="intro-text-box">
@@ -58,9 +635,9 @@
                         쏘카와 함께 이동하세요.
                     </p>
                 </div>
-                <figure class="intro-img img-a sa-intro mv-left-intro">
+                <div class="intro-img img-a sa-intro mv-left-intro">
                     <img src="img/usp_a.jpg" alt="스마트폰으로 쏘카를 이용하는 사람">
-                </figure>
+                </div>
             </div>
             <div class="intro">
                 <div class="intro-text-box">
@@ -71,9 +648,9 @@
                         어디서나 편하게 출발하세요.
                     </p>
                 </div>
-                <figure class="intro-img img-b sa-intro mv-left-intro">
+                <div class="intro-img img-b sa-intro mv-left-intro">
                     <img src="img/usp_b.jpg" alt="쏘카를 이용하는 사람들">
-                </figure>
+                </div>
             </div>
             <div class="intro">
                 <div class="intro-text-box">
@@ -83,9 +660,9 @@
                         10분 단위로 원하는 만큼만 이동하세요.
                     </p>
                 </div>
-                <figure class="intro-img img-c sa-intro mv-left-intro">
+                <div class="intro-img img-c sa-intro mv-left-intro">
                     <img src="img/usp_c.jpg" alt="쏘카를 이용해 장을 보는 사람들">
-                </figure>
+                </div>
             </div>
             <div class="intro">
                 <div class="intro-text-box">
@@ -96,74 +673,21 @@
                         선택해서 이용하세요.
                     </p>
                 </div>
-                <figure class="intro-img img-d sa-intro mv-left-intro">
+                <div class="intro-img img-d sa-intro mv-left-intro">
                     <img src="img/usp_d.jpg" alt="주차장에 주차된 쏘카 차량들">
-                </figure>
+                </div>
             </div>
         </section>
-        <section class="count-user-container">
-            <div class="count-user">
+        <section class="random-user-container">
+            <div class="random-user">
                 <h2>
-                    <span class="blue-text count-up sa-count">0</span>명의 회원이 쏘카와<br>
+                    <span class="blue-text random-up sa-random">0</span>명의 회원이 쏘카와<br>
                     함께하고 있습니다.<br>
                     지금 바로 <span class="blue-text">쏘카 드라이브</span>를<br>
                     시작하세요.
                 </h2>
             </div>
-            <div class="count-user-bg sa-count-bg mv-left-bg"></div>
-        </section>
-        <section class="more-info">
-            <ul class="more-info-links">
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-circle main">
-                            카셰어링 쏘카
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-circle blue">
-                            쏘카 비즈니스
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-circle yellow">
-                            쏘카 플랜
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-circle orange">
-                            쏘카 페어링
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-arrow">
-                            쏘카 이용 안내
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-arrow">
-                            요금 보기
-                        </a>
-                    </h3>
-                </li>
-                <li>
-                    <h3>
-                        <a href="#" class="bullet-point-arrow">
-                            혜택 확인하기
-                        </a>
-                    </h3>
-                </li>
-            </ul>
+            <div class="random-user-bg sa-random-bg mv-left-bg"></div>
         </section>
     </main>
     <footer>
@@ -171,30 +695,30 @@
             <ul class="sns-links">
                 <li>
                     <a href="#">
-                        <figure class="sns-icon-img">
+                        <div class="sns-icon-img">
                             <img src="img/i-instagram.svg" alt="Instagram icon">
-                        </figure>
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <figure class="sns-icon-img">
+                        <div class="sns-icon-img">
                             <img src="img/i-facebook.svg" alt="Facebook icon">
-                        </figure>
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <figure class="sns-icon-img">
+                        <div class="sns-icon-img">
                             <img src="img/i-youtube.svg" alt="Youtube icon">
-                        </figure>
+                        </div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <figure class="sns-icon-img">
+                        <div class="sns-icon-img">
                             <img src="img/i-blog.svg" alt="Blog icon">
-                        </figure>
+                        </div>
                     </a>
                 </li>
             </ul>
@@ -252,15 +776,7 @@
             </div>
         </div>
     </footer>
-    <div class="download-app">
-        <a href="#">
-            <div class="download-app-bg sa-app-bg mv-left-bg"></div>
-            <figure class="app-img sa-app-img hide-opacity"></figure>
-            <span class="socar-download sa-app-text">
-                쏘카 앱 다운로드
-            </span>
-        </a>
-    </div>
-    <script src="js/scroll.js"></script>
+    <script src="./slide.js"></script>
+   
 </body>
 </html>

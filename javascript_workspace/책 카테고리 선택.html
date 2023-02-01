@@ -8,5 +8,17 @@
 </head>
 <body>
     
+    <button onclick="random1()">랜덤값</button>
+    <script>
+        function random1(){
+
+        
+        const $random1 = document.querySelector('#random1');
+        const random1 = Math.floor((Math.random()*(10000-1)+1)+2000);
+        document.write(random1);
+
+        $random1.append(random1, document.createElement('br'));
+    }
+    </script>
 </body>
 </html>
