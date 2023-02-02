@@ -1,11 +1,19 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차가 필요한 모든 순간, 쏘카</title>
     <style>
+
+        /* body{
+            margin: 0;
+        }
+        html{
+            margin: 0;
+            padding: 0;
+        } */
 
 
 header{
@@ -17,11 +25,7 @@ header{
     z-index: 100;
 }
 
-header_2{
-    width: 1000px;
-    height: 1000px;
 
-}
 
 .header-wrapper{
     width: 100%;
@@ -37,6 +41,7 @@ header_2{
     background-image: url(../img/logo-blue.svg);
     background-repeat: no-repeat;
     background-size: 112px 23px;
+
 }
 
 .hidden{
@@ -45,28 +50,6 @@ header_2{
     height: 1px;
     clip-path: inset(0px 0px 99.9% 99.9%);
     overflow: hidden;
-}
-/* 햄버거 버튼 */
-.hamburger-button{
-    width: 36px;
-    height: 14px;
-    cursor: pointer;
-}
-
-.hamburger-button span{
-    position: absolute;
-    display: block;
-    width: 26px;
-    height: 3px;
-    background-color: #00B8FF;
-}
-
-.button-bottom{
-    margin: 11px 0 0 10px;
-}
-
-.hamburger-container{
-    display: none;
 }
 
 /* 본문 */
@@ -150,6 +133,10 @@ header_2{
     color: #00B8FF;
 }
 
+#number{
+    color: #00B8FF;
+}
+
 .random-up{
     font-weight: bold;
 }
@@ -186,6 +173,7 @@ footer{
 }
 
 .sns-icon-img img{
+    margin: 20px;
     width: 30px;
     height: 30px;
 }
@@ -215,6 +203,7 @@ footer{
     display: flex;
     width: 100%;
     margin-top: 8px;
+    
 }
 
 .corp-left, .corp-right{
@@ -341,6 +330,7 @@ footer{
 
 
 
+
     footer{
         padding: 40px 18px 72px;
     }
@@ -385,10 +375,6 @@ footer{
 
 
 
-    /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -403,6 +389,7 @@ article, aside, canvas, details, embed,
 figure, figcaption, footer, header, hgroup, 
 menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
+   
 	margin: 0;
 	padding: 0;
 	border: 0;
@@ -443,6 +430,9 @@ table {
   flex-wrap: nowrap;
   /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
   overflow: hidden;
+  
+ 
+
 
   /* position */
   /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
@@ -507,23 +497,28 @@ table {
 .slide_item.item1 {
    width: 100%;
    height: auto;
+   background-size: cover;
 }
 .slide_item.item2 {
     width: 100%;
     height: auto;
+    background-size: cover;
 }
 .slide_item.item3 {
     
     height: auto;
+    background-size: cover;
     
 }
 .slide_item.item4 {
     
     height: auto;
+    background-size: cover;
 }
 .slide_item.item5 {
     
     height: auto;
+    background-size: cover;
 }
 
 /* 페이지네이션 스타일 */
@@ -567,6 +562,136 @@ li {
   flex-shrink: 0;
   transition: left 0.15s;
 }
+
+
+/* 햄버거 버튼*/
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 0;
+  transition: 0.2s ease;
+  z-index: 100;
+  background-color: #374553;
+}
+
+.burger-icon {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  z-index: 200;
+  padding: 8px 0;
+  top: 4px;
+  right: 4px;
+  user-select: none;
+  width: auto;
+  margin: 0;
+}
+
+.burger-icon .burger-sticks {
+  background: #00B8FF;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: .2s ease-out;
+  width: 30px;
+  
+  
+
+}
+
+.burger-icon .burger-sticks:before,
+.burger-icon .burger-sticks:after {
+  background:#00B8FF;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+  z-index: 100;
+  
+  
+}
+
+.burger-icon .burger-sticks:before {
+  top: 5px;
+}
+
+.burger-icon .burger-sticks:after {
+  top: -5px;
+  
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked~.menu {
+  max-width: 200px;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks {
+  background: transparent;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:before {
+  transform: rotate(-45deg);
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:after {
+  transform: rotate(45deg);
+}
+
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+  top: 0;
+}
+
+.hamburger-menu-1>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+}
+
+.hamburger-menu-2>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+    
+}
+
+.hamburger-menu-3>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+}
+
+.hamburger-container{
+    background-color: #374553;
+    height: 100vh;
+  
+   
+  
+    
+}
+
+.hamburger-container>ul>li>a:hover{
+    color: #00B8FF;
+}
     </style>
 </head>
 <body>
@@ -577,47 +702,58 @@ li {
                     <div class="main-logo-img"></div>
                     <h1 class="hidden">SOCAR</h1>
                 </a>
-            </div>
-            <div class="hamburger-button">
-                <span class="button-top"></span>
 
-                <span class="button-bottom"></span>
+                
             </div>
+            <input class="burger-check" type="checkbox" id="burger-check" />
+            <label class="burger-icon" for="burger-check">
+              <span class="burger-sticks">
+             </span></label>
+          <div class="menu">
+            
+            <div style="width: 200px;"></div>
+          
+            <div class="hamburger-container">
+              <ul class="hamburger-menu-1">
+                  <li><a href="#">이용 안내</a></li>
+                  <li><a href="#">요금 안내</a></li>
+                  <li><a href="#">혜택 안내</a></li>
+                  <li><a href="#">쏘카존 개설 신청</a></li>
+                  <hr>
+              </ul>
+              <ul class="hamburger-menu-2">
+                  <li><a href="#">쏘카의 서비스</a></li>
+                    
+                     <li class="indent"><a href="#">쏘카 비즈니스</a></li>
+                     <li class="indent"><a href="#">쏘카 플랜</a></li>  
+                   
+                <hr>              
+              </ul>
+              <ul class="hamburger-menu-3">
+                  <li><a href="#">회사소개</a></li>
+                  <li><a href="#">공고</a></li>
+              </ul>
+          </div>
+          </div>
         </div>
-        <div class="hamburger-container">
-            <ul class="hamburger-menu-1">
-                <li><a href="#">이용 안내</a></li>
-                <li><a href="#">요금 안내</a></li>
-                <li><a href="#">혜택 안내</a></li>
-                <li><a href="#">쏘카존 개설 신청</a></li>
-            </ul>
-            <ul class="hamburger-menu-2">
-                <li><a href="#">쏘카의 서비스</a></li>
-                <li class="indent"><a href="#">쏘카 비즈니스</a></li>
-                <li class="indent"><a href="#">쏘카 플랜</a></li>                
-            </ul>
-            <ul class="hamburger-menu-3">
-                <li><a href="#">회사소개</a></li>
-                <li><a href="#">공고</a></li>
-            </ul>
-        </div>
+    
     </header>
     <header_2>
         <div class="slide slide_wrap">
             <div class="slide_item item1">
-                <img src="img/usp_e.jpg">
-            </div>
-            <div class="slide_item item2">
-                <img src="img/usp_d.jpg">
-            </div>
-            <div class="slide_item item3">
                 <img src="img/usp_a.jpg">
             </div>
-            <div class="slide_item item4">
+            <div class="slide_item item2">
                 <img src="img/usp_b.jpg">
             </div>
-            <div class="slide_item item5">
+            <div class="slide_item item3">
                 <img src="img/usp_c.jpg">
+            </div>
+            <div class="slide_item item4">
+                <img src="img/usp_d.jpg">
+            </div>
+            <div class="slide_item item5">
+                <img src="img/usp_e.jpg">
             </div>
             <div class="slide_prev_button slide_button">◀</div>
             <div class="slide_next_button slide_button">▶</div>
@@ -681,7 +817,13 @@ li {
         <section class="random-user-container">
             <div class="random-user">
                 <h2>
-                    <span class="blue-text random-up sa-random">0</span>명의 회원이 쏘카와<br>
+                    
+                    <span class="blue-text">
+                        <script>
+                        var jbRandom = Math.random();
+                        document.write('<p>'+ Math.floor( jbRandom * 100000 ) + '명의 회원이 쏘카와<br> </p>' ); </script></span> 
+                    
+                    
                     함께하고 있습니다.<br>
                     지금 바로 <span class="blue-text">쏘카 드라이브</span>를<br>
                     시작하세요.
@@ -777,6 +919,7 @@ li {
         </div>
     </footer>
     <script src="./slide.js"></script>
+   
    
 </body>
 </html>
