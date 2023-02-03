@@ -5,15 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>차가 필요한 모든 순간, 쏘카</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+   
+    
     <style>
 
-        /* body{
-            margin: 0;
+body *{
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+     overflow-x: visible;
         }
-        html{
-            margin: 0;
-            padding: 0;
-        } */
+
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+        } 
 
 
 header{
@@ -24,6 +33,8 @@ header{
     box-sizing: border-box;
     z-index: 100;
 }
+
+
 
 
 
@@ -41,6 +52,7 @@ header{
     background-image: url(../img/logo-blue.svg);
     background-repeat: no-repeat;
     background-size: 112px 23px;
+   
 
 }
 
@@ -146,7 +158,7 @@ header{
     width: 100%;
     height: 100%;
     background-color: #00B8FF;
-    transform: skewX(-30deg) translateX(70%);
+    transform: skewX(-30deg) translateX(80%);
     top: 0;
     z-index: 1;
     transition: .5s;
@@ -310,7 +322,7 @@ footer{
         background-position: top;
     }
 
-    .title-text{
+    .title_text{
         font-size: 40px;
     }
 
@@ -341,19 +353,19 @@ footer{
 
     .footer-nav li a{
         font-size: 13px;
+        color: rgb(255, 255, 255);
     }
 
     .corp-area{
+        display: flex;
         flex-wrap: wrap;
+        margin-top: 8px;
     }
 
     .corp-left, .corp-right{
-        width: 100%;
+        width: 50%;
     }
 
-    .corp-right{
-        margin-top: 16px;
-    }
 
     .corp-left dl, .corp-right ul{
         font-size: 12px;
@@ -397,7 +409,7 @@ time, mark, audio, video {
 	font: inherit;
 	vertical-align: baseline;
 }
-/* HTML5 display-role reset for older browsers */
+
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
 	display: block;
@@ -424,61 +436,42 @@ table {
 	border-spacing: 0;
 }
 
+/*슬라이드*/
+
 .slide {
-  /* layout */
   display: flex;
   flex-wrap: nowrap;
-  /* 컨테이너의 내용물이 컨테이너 크기(width, height)를 넘어설 때 보이지 않도록 하기 위해 hidden을 준다. */
   overflow: hidden;
-  
- 
-
-
-  /* position */
-  /* slide_button의 position absolute가 컨테이너 안쪽에서 top, left, right offset이 적용될 수 있도록 relative를 준다. (기본값이 static인데, static인 경우 그 상위 컨테이너로 나가면서 현재 코드에선 html을 기준으로 offset을 적용시키기 때문) */
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing : border-box;
   position: relative;
-
-  /* size */
   width: 100%;
-
-  /* slide drag를 위해 DOM요소가 드래그로 선택되는것을 방지 */
   user-select: none;
 }
 .slide_item {
-  /* layout */
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* position - 버튼 클릭시 left offset값을 적용시키기 위해 */
   position: relative;
   left: 0px;
-
-  /* size */
   width: 100%;
   height: 300px;
-  /* flex item의 flex-shrink는 기본값이 1이므로 컨테이너 크기에 맞게 줄어드는데, 슬라이드를 구현할 것이므로 줄어들지 않도록 0을 준다. */
   flex-shrink: 0;
 
-  /* transition */
+
   transition: left 0.15s;
 }
 .slide_button {
-  /* layout */
+
   display: flex;
   justify-content: center;
   align-items: center;
-
-  /* position */
   position: absolute;
-  /* 버튼이 중앙에 위치하게 하기위해 계산 */
   top: calc(50% - 16px);
-
-  /* size */
   width: 32px;
   height: 32px;
-
-  /* style */
   border-radius: 100%;
   background-color: #cccc;
   cursor: pointer;
@@ -493,35 +486,68 @@ table {
 
 }
 
-/* 각 슬라이드가 변경되는 것을 시각적으로 확인하기 쉽도록 각 슬라이드별 색상 적용 */
+
+#title_text{
+    z-index: 500;
+    color: #fff;
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0 0 0/ 40%);
+    transition: .5s;
+    font-size: 40px;
+    background-position: top;
+    position: absolute;
+    text-align: center;
+    
+}
+
 .slide_item.item1 {
    width: 100%;
    height: auto;
    background-size: cover;
+   margin: 0;
+   padding: 0;
+   box-sizing : border-box;
 }
+
 .slide_item.item2 {
     width: 100%;
     height: auto;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+    
 }
 .slide_item.item3 {
     
     height: auto;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
     
 }
 .slide_item.item4 {
     
     height: auto;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
 }
 .slide_item.item5 {
     
     height: auto;
     background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
 }
 
-/* 페이지네이션 스타일 */
+
 ul,
 li {
   list-style-type: none;
@@ -529,25 +555,24 @@ li {
   margin: 0;
 }
 .slide_pagination {
-  /* layout */
+
   display: flex;
   gap: 5px;
-
-  /* position */
   position: absolute;
   bottom: 0;
-  /* left:50%, translateX(-50%)를 하면 가로 가운데로 위치시킬 수 있다. */
+  padding: 0;
+  margin: 0;
   left: 50%;
   transform: translateX(-50%);
 }
 .slide_pagination > li {
-  /* 현재 슬라이드가 아닌 것은 투명도 부여 */
+  
   color: #7fb5ff88;
   cursor: pointer;
   font-size: 25px;
 }
 .slide_pagination > li.active {
-  /* 현재 슬라이드 색상은 투명도 없이 */
+ 
   color: #7fb5ff;
 }
 
@@ -611,6 +636,7 @@ li {
   transition: all .2s ease-out;
   width: 100%;
   z-index: 100;
+  
   
   
 }
@@ -691,7 +717,83 @@ li {
 
 .hamburger-container>ul>li>a:hover{
     color: #00B8FF;
+    
 }
+
+.slide_item > img{
+    width: 100%;
+}
+
+/* 하단고정배너 */
+    #btn-app.shadow {
+    box-shadow: 64px -2px 19px -4px rgb(0 0 0 / 20%);
+    }
+
+    #btn-app {
+    z-index: 101;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    width: 340px;
+    height: 90px;
+    overflow: hidden;
+    background-color: transparent;
+    }
+
+    #btn-app #blue {
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-color: #00b8ff;
+    }
+    #btn-app.showing {
+        -webkit-transition: all 450ms ease;
+        opacity: 1;
+    }
+
+    #blue {
+    position: absolute;
+    bottom: -1px;
+    background: rgba(0,184,255,1);
+    transform-origin: bottom left;
+    }
+
+    #btn-app img {
+    position: absolute;
+    z-index: 9;
+    top: 10%;
+    left: 7px;
+    width: auto;
+    height: 60px;
+    border-radius: 12px;
+    
+    }
+
+    #btn-app span {
+    font-size: 15pt;
+    letter-spacing: -0.03em;
+    display: block;
+    line-height: 1.3;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+    #btn-app #blue.showing {
+        transition: transform .8s cubic-bezier(0.165, 0.840, 0.440, 1.000), opacity .5s ease;
+        left: 0%;
+        opacity: 1;
+        transform: skewX(-30deg) translate3d(0, 0, 0);
+    }
+
+    #btn-app img.showing {
+    opacity: 1;
+    -webkit-transition: all 250ms ease-in;
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+}
+    
+
     </style>
 </head>
 <body>
@@ -730,7 +832,7 @@ li {
                 <hr>              
               </ul>
               <ul class="hamburger-menu-3">
-                  <li><a href="#">회사소개</a></li>
+                  <li><a href="connect/socarUniverse.html">회사소개</a></li>
                   <li><a href="#">공고</a></li>
               </ul>
           </div>
@@ -740,20 +842,49 @@ li {
     </header>
     <header_2>
         <div class="slide slide_wrap">
+            
             <div class="slide_item item1">
-                <img src="img/usp_a.jpg">
+                <img src="img/usp_b.jpg">   
+               
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+              
             </div>
             <div class="slide_item item2">
-                <img src="img/usp_b.jpg">
+                <img src="img/usp_a.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+                
             </div>
             <div class="slide_item item3">
                 <img src="img/usp_c.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
             </div>
             <div class="slide_item item4">
                 <img src="img/usp_d.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
             </div>
             <div class="slide_item item5">
                 <img src="img/usp_e.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
             </div>
             <div class="slide_prev_button slide_button">◀</div>
             <div class="slide_next_button slide_button">▶</div>
@@ -763,7 +894,15 @@ li {
          
         <section class="intro-container">
             <div class="intro">
-                <div class="intro-text-box">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <h2 class="intro-title sa-intro mv-left-intro">24시간 언제나</h2>
                     <p class="intro-text sa-intro mv-left-intro">
                         한밤중이나 주말에도 스마트폰으로<br>
@@ -771,12 +910,28 @@ li {
                         쏘카와 함께 이동하세요.
                     </p>
                 </div>
-                <div class="intro-img img-a sa-intro mv-left-intro">
+                <div class="intro-img img-a sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <img src="img/usp_a.jpg" alt="스마트폰으로 쏘카를 이용하는 사람">
                 </div>
             </div>
             <div class="intro">
-                <div class="intro-text-box">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <h2 class="intro-title sa-intro mv-left-intro">원하는 곳에서</h2>
                     <p class="intro-text sa-intro mv-left-intro">
                         내 주변 3분 거리 쏘카존에서<br>
@@ -784,23 +939,55 @@ li {
                         어디서나 편하게 출발하세요.
                     </p>
                 </div>
-                <div class="intro-img img-b sa-intro mv-left-intro">
+                <div class="intro-img img-b sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <img src="img/usp_b.jpg" alt="쏘카를 이용하는 사람들">
                 </div>
             </div>
             <div class="intro">
-                <div class="intro-text-box">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <h2 class="intro-title sa-intro mv-left-intro">필요한 시간만큼</h2>
                     <p class="intro-text sa-intro mv-left-intro">
                         간단한 장보기부터 주말여행까지<br>
                         10분 단위로 원하는 만큼만 이동하세요.
                     </p>
                 </div>
-                <div class="intro-img img-c sa-intro mv-left-intro">
+                <div class="intro-img img-c sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <img src="img/usp_c.jpg" alt="쏘카를 이용해 장을 보는 사람들">
                 </div>
             </div>
-            <div class="intro">
+            <div class="intro"
+            data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                 <div class="intro-text-box">
                     <h2 class="intro-title sa-intro mv-left-intro">다양한 차종을</h2>
                     <p class="intro-text sa-intro mv-left-intro">
@@ -809,7 +996,15 @@ li {
                         선택해서 이용하세요.
                     </p>
                 </div>
-                <div class="intro-img img-d sa-intro mv-left-intro">
+                <div class="intro-img img-d sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
                     <img src="img/usp_d.jpg" alt="주차장에 주차된 쏘카 차량들">
                 </div>
             </div>
@@ -821,7 +1016,11 @@ li {
                     <span class="blue-text">
                         <script>
                         var jbRandom = Math.random();
-                        document.write('<p>'+ Math.floor( jbRandom * 100000 ) + '명의 회원이 쏘카와<br> </p>' ); </script></span> 
+
+                        // 3자리마다 컴마 찍을수 있도록 
+                        let result = Math.floor( jbRandom * 10000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        document.write('<p>'+ result + '명의 회원이 쏘카와<br> </p>' ); 
+                        </script></span> 
                     
                     
                     함께하고 있습니다.<br>
@@ -859,38 +1058,38 @@ li {
                 <li>
                     <a href="#">
                         <div class="sns-icon-img">
-                            <img src="img/i-blog.svg" alt="Blog icon">
+                            <img src="img/i-blog.svg" alt="Blog icon" >
                         </div>
                     </a>
                 </li>
             </ul>
             <ul class="footer-nav">
                 <li>
-                    <a href="#">회사소개</a>
+                    <a href="https://www.socarcorp.kr/">회사소개</a>
                 </li>
                 <li>
-                    <a href="#">인재채용</a>
+                    <a href="https://www.socarcorp.kr/careers/jobs">인재채용</a>
                 </li>
                 <li>
-                    <a href="#">나눔카</a>
+                    <a href="https://www.socar.kr/nanumcar">나눔카</a>
                 </li>
                 <li>
-                    <a href="#">이용약관</a>
+                    <a href="https://www.socar.kr/terms">이용약관</a>
                 </li>
                 <li>
-                    <a href="#" class="accent">개인정보처리방침</a>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360048398254" class="accent">개인정보처리방침</a>
                 </li>
                 <li>
-                    <a href="#" class="accent">위치정보 이용약관</a>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360049150593" class="accent">위치정보 이용약관</a>
                 </li>
                 <li>
-                    <a href="#" class="accent">차량손해면책제도</a>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360052593593" class="accent">차량손해면책제도</a>
                 </li>
                 <li>
-                    <a href="#">고객센터</a>
+                    <a href="https://socarhelp.zendesk.com/hc/ko">고객센터</a>
                 </li>
                 <li>
-                    <a href="#">제휴 문의</a>
+                    <a href="https://www.socar.kr/">제휴 문의</a>
                 </li>
             </ul>
             <div class="corp-area">
@@ -910,16 +1109,32 @@ li {
                 </div>
                 <div class="corp-right">
                     <ul>
-                        <li>(주)쏘카 통신판매업<a href="#">사업자정보 확인</a></li>
+                        <li>(주)쏘카 통신판매업<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6168190529&apv_perm_no=">사업자정보 확인</a></li>
                         <li>신고: 제 2019-제주오라-3호, 사업자등록번호: 616-81-90529, 대표자: 박재욱</li>
                         <li>© 2019 SOCAR All rights reserved.</li>
+                        <br><br><br>
                     </ul>
                 </div>
             </div>
         </div>
+
+        <div  data-aos="fade-left"
+        data-aos-offset="200"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center" id="btn-app" class="showing shadow"><a href="https://go.socar.kr/sdhv3ZE4r5" target="_blank"
+            rel="noopener noreferrer" style="overflow: hidden;"><span class="cent showing">쏘카 앱 다운로드</span><img
+                id="btn-app" class="cth showing" src="하단고정배너.svg" alt="">
+            <div id="blue" class="mvright moveit showing"></div>
+        </a></div>
     </footer>
-    <script src="./slide.js"></script>
    
+  
+    <script src="./slide.js"></script>
+    
    
 </body>
 </html>

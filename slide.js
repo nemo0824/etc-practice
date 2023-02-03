@@ -201,10 +201,13 @@ slide.addEventListener("mouseover", () => {
 // 슬라이드에서 마우스가 나온 경우 루프 재시작하기
 slide.addEventListener("mouseout", () => {
   loopInterval = setInterval(() => {
-    nextMove();
+    //nextMove();
   }, 3000);
 });
 
+AOS.init();
 
-
+$(function(){
+  $("#titleText").fadeIn(3000);
+})
 
