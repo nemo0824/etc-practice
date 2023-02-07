@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <title>Document</title>
+    <style>
+        /* 사이즈 */
+        html{
+            
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            
+        }
+        body{
+            margin: 0;
+        }
+        
+        .wrapper{
+            width: 100%;
+            height: 2655.86px;
+            margin: 0px;
+            background: #f7f8fa;
+            
+        }
+        
+
+
+
+        #content1{
+            width: 100%;
+            height: 1024px;
+            background-color: rgb(4, 4, 78);
+            position: relative;
+            font-weight: 600;
+        }
+        #content2{
+            width: 100%;
+            height: 1024px;
+            position: relative;
+            font-weight: 600;
+        }
+        #content3{
+            width: 100%;
+            height: 1024px;
+            position: relative;
+            font-weight: 600;
+            
+            
+        }
+        #content1_sub{
+            width: 70%;
+            height: 300px;
+            position: absolute;
+            top: 170px;
+            left: 190px;
+            
+        }
+        #main>div{
+        height: 969px;
+        }
+
+
+
+        /* 컨텐츠 */
+        
+        #header{
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            width: 100%;
+            margin: auto;
+            line-height: 72px;
+            display: flex;
+            z-index: 1; 
+            border: 1px solid white;
+        }
+
+        /* 헤더 영역 */
+        .header{
+            float: left;
+            height: 100%;
+            width: 38%;
+            
+        }
+        /* 로고 */
+        #logo{  
+            position: relative;
+            z-index: 1;
+            left: 200px;
+            top: 7.5px;
+            
+        }
+        
+        /* 메뉴바 */
+        #navigator{
+            display: flex;
+            flex-direction: row;
+            height: 100%;
+            left: 290px;
+            top: 5px;
+            position: relative;
+            
+           
+        }
+        #navi{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            
+            
+        }
+        #navi>li{
+            height: 100%;
+            text-align: center;
+            display: inline-block;
+            vertical-align: top;
+            margin: 0 15px;
+        }
+        #navi a{
+            
+            text-decoration: none;
+            color: white;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: "GM_R", "Noto Sans", Helvetica, Arial, sans-serif;
+            display: inline-block;
+            vertical-align: bottom;
+            
+        }
+        #navi a:hover{
+            color: #c2c2c2;
+        }
+
+        /* 비디오 컨텐츠 */
+        .video-container {
+            position: relative;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+        /* 비디오 ui 숨기기 */
+        video::-webkit-media-controls-timeline { display: none !important;}
+        video::-webkit-media-controls-play-button {display: none !important;}
+        video::-webkit-media-controls-current-time-display{display: none !important;}
+        video::-webkit-media-controls-fullscreen-button {display: none !important;}
+        video::-webkit-media-controls-mute-button {display: none !important;}
+        video::-webkit-media-controls-time-remaining-display {display: none !important;}
+        
+        
+        #videoContent_sub{
+            width: 70%;
+            height: 300px;
+            position: absolute;
+            top: 720px;
+            left: 190px;
+            z-index: 2;
+            font-weight: 600;
+            
+        }
+
+
+        /* 컨텐츠 사각 버튼 */
+        .content_button1{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: #fff;
+            width: 300px;
+            font-size: 18px;
+            margin-top: 70px;
+            padding: 18px;
+            border-radius: 4px;
+            border: 1px solid white;
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+        .content_button2{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: rgb(0, 0, 0);
+            width: 300px;
+            font-size: 18px;
+            margin-top: 70px;
+            padding: 18px;
+            border-radius: 4px;
+            border: 1px solid rgb(0, 0, 0);
+            background-color: transparent;
+            cursor: pointer;
+        }
+
+
+
+       
+        /* 스크롤 다운 버튼 */
+        .downBtn{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            border: 0px;
+            font-size: 18px;
+            margin-left: 750px;
+            padding: 18px;
+            background-color: transparent;
+            cursor: pointer;
+            border-left: 1px solid #fff;
+            border-bottom: 1px solid #fff;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            -webkit-animation: sdb04 2s infinite;
+            animation: sdb04 2s infinite;
+            box-sizing: border-box;
+        }
+        .btnScroll{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            border: 0px;
+            font-size: 18px;
+            margin-left: 740px;
+            margin-top: 15px;
+            padding: 5.5px;
+            background-color: transparent;
+            cursor: pointer;
+
+        }
+
+        /* 스크롤 다운 버튼 애니메이션 */
+        @-webkit-keyframes sdb04 {
+            0% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+            }
+            20% {
+                -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            40% {
+                -webkit-transform: rotate(-45deg) translate(0, 0);
+            }
+            }
+            @keyframes sdb04 {
+            0% {
+                transform: rotate(-45deg) translate(0, 0);
+            }
+            20% {
+                transform: rotate(-45deg) translate(-10px, 10px);
+            }
+            40% {
+                transform: rotate(-45deg) translate(0, 0);
+            }
+            }
+            
+
+
+            
+
+        /* 푸터 영역 */
+        #footer {
+            width: 100%;
+            height: 341.38px;
+            padding-bottom: 123px;
+            margin-top: 180px;
+        }
+
+        #container {
+            width: 80.7%;
+            margin: 0 auto;
+            max-width: 1550px;
+        }
+
+        #top {
+            width: 100%;
+            height: 79px;
+            padding-bottom: 36px;
+            border-bottom: 1px solid rgb(100, 111, 124);
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            align-items: center;
+        }
+
+        #top>#footerBanner {
+            float: left;
+            width: 146px;
+            height: 27px;
+        }
+
+        #top>#sns {
+            width: 204px;
+            height: 42px;
+            -webkit-box-pack: justify;
+            justify-content: space-between;
+        }
+
+        .snsIcon {
+            width: 42px;
+            height: 42px;
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            border-radius: 50%;
+            display: inline-flex;
+            -webkit-box-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            justify-content: center;
+        }
+
+        .icon_instagram {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("인스타배너.svg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            text-indent: -999999px;
+            cursor: pointer;
+        }
+
+        .icon_facebook {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("페북배너.svg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            text-indent: -999999px;
+            cursor: pointer;
+        }
+
+        .icon_youtube {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("유튜브배너.svg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            text-indent: -999999px;
+            cursor: pointer;
+            background-size: 12px 14px;
+        }
+
+        .icon_blog {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url("B배너.svg");
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            text-indent: -999999px;
+            cursor: pointer;
+        }
+
+        #bottom {
+            padding-top: 42px;
+        }
+
+        #left {
+            width: 564.45px;
+            height: 83.83px;
+            margin-bottom: 1.4rem;
+        }
+
+        #left a {
+            font-weight: 600;
+            position: relative;
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .copyright {
+            margin-top: 42px;
+            font-family: Campton, sans-serif;
+            font-weight: 500;
+        }
+
+        .right {
+            width: 204px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+        }
+
+        .right span {
+            display: inline-flex;
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            -webkit-box-align: center;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .right span i {
+            margin-right: 8px;
+            margin-left: 6px;
+        }
+
+        .icon_arrowDown {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-image: url(/_next/static/media/arrow_down.477ca509.svg);
+            background-repeat: no-repeat;
+            background-position: 50%;
+            background-size: cover;
+            text-indent: -999999px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- 전체 틀 태그 -->
+    <div class="wrapper">
+        <div id="main"> 
+            <div id="main_1">
+                <div id="videoContent_sub">
+                    <span style="font-size: 40px; color: white;" >모든 사람이 자유롭고 행복하게</span><br><br>
+                    <span style="font-size: 40px; color:white; ">이동하는 세상을 만듭니다</span>
+                    <div class="scroll">
+                        <button type="button" class="downBtn"></button>
+                        <span class="btnScroll">Scroll</span>
+                    </div>
+                </div>
+
+
+                <!-- 메인 영상 컨텐츠 -->
+                <div class="video-container">
+                    <video width="560" height="315" src="resources/main_video.mp4" frameborder="0" allowfullscreen autoplay controls loop muted></video>
+                </div>
+                <div id="header">
+                    <span id="logo" class="header" target="_blank">
+                        <a href=http://127.0.0.1:3000/%EC%8F%98%EC%B9%B4%ED%9A%8C%EC%82%AC%EC%86%8C%EA%B0%9C.html>
+                        <img src="resources/logo_web_white.91ca57f2.svg" >
+                        </a>
+                    </span>
+                    <span id="navigator" class="header">
+                        <ul id="navi">
+                            <li><a href="https://www.socarcorp.kr/about">ABOUT</a></li>
+                            <li><a href="">SOCAR UNIVERSE</a></li>
+                            <li><a href="https://www.socarcorp.kr/tech">MOBILITY TECH</a></li>
+                            <li><a href="https://www.socarcorp.kr/careers/culture">CAREERS</a></li>
+                            <li><a href="https://www.socarcorp.kr/ir/management_info">IR</a></li>
+                            <li><a href="https://www.socarcorp.kr/news/pr">NEWS</a></li>
+                        </ul>
+                    </span>
+                </div>
+         
+        </div>
+        <!--컨텐츠 1-->
+        <div id="content1">
+            <img src="resources/tech-bg.png" width="100%" height="100%">
+            <div id="content1_sub">
+                <h3 style="color: rgb(65, 65, 250);">SOCAR UNIVERSE</h3>
+                <span style="font-size: 40px; color: white;">기술과 데이터로</span><br><br>
+                <span style="font-size: 40px; color:white; ">이동의 문제를 해결합니다.</span><br><br><br>
+                <button class="content_button1" onclick="location.href='https://www.socarcorp.kr/tech' ">
+                    <span>MOBILITY TECH &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></span>
+                </button>
+
+            </div>
+        </div>    
+
+        <!--컨텐츠 2-->
+        <div id="content2">
+            <img src="resources/bg_universe.jpeg" width="100%" height="100%">
+            <div id="content1_sub">
+                <h3 style="color: blue;">MOBILITY TECH</h3>
+                <span style="font-size: 40px;">디지털 플랫폼을 중심으로</span><br><br>
+                <span style="font-size: 40px;">새로운 모빌리티 생태계를 만듭니다.</span><br><br><br>
+                <button class="content_button2" onclick="location.href='https://www.socarcorp.kr/universe' ">
+                    <span>SOCAR UNIVERSE &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;></span>
+                </button>
+
+            </div>
+
+        </div>
+
+        <!--컨텐츠 3-->
+        <div id="content3">
+            <img src="resources/bg_culture.jpeg" width="100%" height="100%">
+            <div id="content1_sub">
+                <h3 style="color: blue;">CAREERS</h3>
+                <span style="font-size: 40px;">쏘카다운 방식으로</span><br><br>
+                <span style="font-size: 40px;">모빌리티를 혁신합니다.</span><br><br><br>
+                <button class="content_button2" onclick="location.href='https://www.socarcorp.kr/careers/culture' ">
+                    <span>CAREERS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+        <!-- 푸터영역 -->
+        <footer id="footer">
+
+            <div id="container">
+                <!-- 위쪽 푸터 -->
+                <div id="top">
+                    <img id="footerBanner" src="SOCAR하단배너.svg">
+                    <div id="sns">
+                        <a href="https://www.instagram.com/socarsharing/" rel="noreferrer" target="_blank"
+                            class="snsIcon"><i class="icon_instagram"></i></a>
+                        <a href="https://www.facebook.com/socarsharing/" rel="noreferrer" target="_blank"
+                            class="snsIcon"><i class="icon_facebook"></i></a>
+                        <a href="https://www.youtube.com/channel/UCsNtu0KJ3SJfs1zcQj8xEYQ" rel="noreferrer"
+                            target="_blank" class="snsIcon"><i class="icon_youtube"></i></a>
+                        <a href="https://blog.socar.kr/" rel="noreferrer" target="_blank" class="snsIcon"><i
+                                class="icon_blog"></i></a>
+                    </div>
+                </div>
+
+                <!-- 아래쪽푸터 -->
+                <div id="bottom">
+                    <span id="left">
+                        <a href="https://www.socarcorp.kr/ask">문의하기 |</a>
+                        <a href="https://www.socarcorp.kr/location">오시는 길 |</a>
+                        <a href="https://www.socarcorp.kr/privacy_policy">개인정보처리방침 |</a>
+                        <a href="https://www.socarcorp.kr/code_of_ethics">쏘카 윤리강령 |</a>
+                        <a href="https://www.socarcorp.kr/business_ethics_report">기업윤리 신고·제보</a>
+                    </span>
+                    <p class="copyright">© 2023 SOCAR All rights reserved.</p>
+
+                    <div class="right">
+                        <span>관련 사이트
+                            <i class="icon_arrowDown">
+                            </i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+    
+
+    <!-- 스크립트 -->
+    <script src="스크롤.js"></script>
+
+
+</body>
+</html>
