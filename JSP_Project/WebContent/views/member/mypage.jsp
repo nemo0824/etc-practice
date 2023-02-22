@@ -64,7 +64,11 @@
                     <td colspan="2">
                         <!-- (input[type=checkbox name=interest id= value=]+label)*6 -->
 
-                        <input type="checkbox" name="interest" id="sports" value="운동" >
+                        <input type="checkbox" name="interest" id="sports" value="운동" 
+                        <%-- <% if(interest.indexOf("운동") > -1){ %>
+                        	checked="checked"
+                        <% } %> --%>
+                         >
                         <label for="sports">운동</label>
 
                         <input type="checkbox" name="interest" id="hiking" value="등산">
@@ -135,6 +139,7 @@
 						</tr>
 					</table>
 					<br>
+					<input type="hidden" name="userId" value="<%= loginUser.getUserId() %>">
 					
 					<button type="submit" class="btn btn-danger btn-sm">탈퇴하기</button>
 				</form>

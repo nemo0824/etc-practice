@@ -44,8 +44,7 @@ public class Notice {
 		this.noticeContent = noticeContent;
 		this.noticeWriter = noticeWriter;
 		this.createDate = createDate;
-	}
-	
+	}	
 
 	public int getNoticeNo() {
 		return noticeNo;

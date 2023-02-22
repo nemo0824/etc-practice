@@ -1,10 +1,10 @@
-<%@ page import= "com.kh.notice.model.vo.Notice" %>
+<%@ page import="com.kh.notice.model.vo.Notice" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% 
-	Notice n = (Notice) request.getAttribute("n");
+<%
+	Notice n = (Notice) request.getAttribute("n"); 
+    // 글번호(noticeNo) , 글제목(noticeTitle), 글내용, 아이디, 작성일
 %>
-    
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,23 +12,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%@ include file = "../common/menubar.jsp" %>
+	<%@ include file ="../common/menubar.jsp" %>
 	
 	<div class="outer">
 		<br>
-		<h2 align = "center"> 공지사항 상세보기 </h2>
+		<h2 align="center">공지사항 상세보기</h2>
 		<br>
 		
-		<table id ="detail-ara" align="center" border="1">
-			<tr>	
-				<th width = "70">제목 </th>
-				<td width ="350" colspan ="3"><%= n.getNoticeTitle() %></td>
-				
+		<table id="detail-ara" align="center" border="1">
+			<tr>
+				<th width="70">제목</th>
+				<td width="350" colspan="3"><%= n.getNoticeTitle() %></td>
 			</tr>
 			<tr>
 				<th>작성자</th>
 				<td><%= n.getNoticeWriter() %></td>
-				<th><%= n.getNoticeWriter() %></th>
+				<th>작성일</th>
 				<td><%= n.getCreateDate() %></td>
 			</tr>
 			<tr>
@@ -40,17 +39,17 @@
 		</table>
 		<br><br>
 		
-		<div align = "center">
+		<div align="center">
 			<a href="<%=contextPath %>/list.no" class="btn btn-secondary btn-sm">목록</a>
 			
-		<%if(loginUser != null && loginUser.getUserId().equals(n.getNoticeWriter())) {%>
-            <!-- 현재 로그인을 한 사용자가 해당 글을 작성한 작성자일경우에만 보여지도록 컨트롤 -->
-            <a href="<%=contextPath %>/updateForm.no?nno=<%=n.getNoticeNo() %>" class="btn btn-warning btn-sm">수정</a>
-            <a href="<%=contextPath %>/delete.no?nno=<%=n.getNoticeNo() %>" class="btn btn-danger btn-sm">삭제</a>
-            
-         <% }%>
-		</div>					
-			
-		
+			<% if(loginUser != null && loginUser.getUserId().equals( n.getNoticeWriter() ) ) { %>
+				<!-- 현재 로그인을 한 사용자가 해당 글을 작성한 작성자일경우에만 보여지도록 컨트롤 -->
+				<a href="<%=contextPath %>/updateForm.no?nno=<%=n.getNoticeNo() %>" class="btn btn-warning btn-sm">수정</a>
+				<a href="<%=contextPath %>/delete.no?nno=<%= n.getNoticeNo() %>" class="btn btn-danger btn-sm">삭제</a>
+			<% } %>
+		</div>
+	
+	</div>
+	
 </body>
 </html>

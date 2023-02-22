@@ -28,9 +28,6 @@ public class NoticeDeleteController extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
 		
 		int nno = Integer.parseInt(request.getParameter("nno"));
 		
@@ -39,28 +36,45 @@ public class NoticeDeleteController extends HttpServlet {
 		 * SET STATUS = 'N'
 		 * WHERE NOTICE_NO = ${nno}
 		 * 
-		 * 
-		 * 
 		 */
 		
 		int result = new NoticeService().deleteNotice(nno);
 		
-		if(result>0) {
-			request.getSession().setAttribute("alertMsg", "성공적으로 공지사항이 삭제되었습니다");
+		if(result > 0) {
 			
-			response.sendRedirect(request.getContextPath() +"/list.no");
+			request.getSession().setAttribute("alertMsg", "성공적으로 공지사항이 삭제되었습니다");
+			 
+			response.sendRedirect( request.getContextPath()  +"/list.no");
+			
 		}else {
 			request.setAttribute("errorMsg", "공지사항 삭제 실패");
-			request.getRequestDispatcher("Views/common/errorPage.jsp").forward(request, response);
-			
+			request.getRequestDispatcher("views/common/errorPage.jsp").forward(request, response);
 		}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }
