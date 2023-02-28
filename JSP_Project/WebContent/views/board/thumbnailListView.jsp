@@ -32,41 +32,26 @@
 			</div>
 		<% } %>
 		<div class="list-area">
-			
+			<% int count = 1; %>
+			<% for(Board b : list) {%>
 			<div class="thumbnail" align="center">
-				<input type="hidden" value="1">
-				<img src="<%=contextPath %>/resources/thumb_upfiles/animal1.gif" width="200px" height="150px">
+				<input type="hidden" value=<%= b.getBoardNo() %>">
+				<img src="<%=contextPath %><%=b.getTitleImg() %>" width="200" height="150">
 				<p>
-					NO.1 첫번째글제목<br>
-					조회수 : 1
+					NO.<%= count++ %>  <%= b.getBoardTitle() %> <br>
+					조회수 : <%= b.getCount() %>
+					
 				</p>
 			</div>
-			
-			<div class="thumbnail" align="center">
-				<input type="hidden" value="2">
-				<img src="<%=contextPath %>/resources/thumb_upfiles/animal2.gif" width="200px" height="150px">
-				<p>
-					NO.2 두번째글제목<br>
-					조회수 : 1
-				</p>
-			</div>
-			
-			<div class="thumbnail" align="center">
-				<input type="hidden" value="3">
-				<img src="<%=contextPath %>/resources/thumb_upfiles/animal3.gif" width="200px" height="150px">
-				<p>
-					NO.3 세번째글제목<br>
-					조회수 : 1
-				</p>
-			</div>
-			
+		<% } %>	
 		</div>
-	</div>
+	</div>	
+		
 
 	<script>
 		$(function(){
 			$(".thumbnail").click(function(){
-				location.href = "<%= contextPath%>/deatil.th?bno="+$(this).children().eq(0).val();
+				location.href = "<%= contextPath%>/detail.th?bno="+$(this).children().eq(0).val();
 			})
 		});
 	</script>

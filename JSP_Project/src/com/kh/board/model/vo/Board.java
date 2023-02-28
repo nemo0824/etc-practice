@@ -13,6 +13,7 @@ public class Board {
 	private Date createDate;							//	CREATE_DATE
 	private String status;							//	STATUS
 	
+	
 	private String titleImg;
 	
 	

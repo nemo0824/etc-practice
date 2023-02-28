@@ -179,6 +179,15 @@ public class BoardService {
 	}
 	
 	
+	public ArrayList<Board> selectThumbnailList(){
+		Connection conn = getConnection();
+		ArrayList<Board> list = new BoardDao().selectThumbnailList(conn);
+		
+		close(conn);
+		
+		return list;
+		
+	}
 	
 	
 	

@@ -66,7 +66,7 @@ public class ThumbnailInsertController extends HttpServlet {
 			b.setBoardWriter( ((Member) request.getSession().getAttribute("loginUser")).getUserNo()+"" );
 			
 			//Attachment테이블에 여러번 insert할 데이터를 뽑기
-			//단, 여러개의 첨부파일이 있을것이기 때문에 attahment들을 ArrayList에 담을예정 => 반드시 1개이상은 담김(대표이미지)
+			//단, 여러개의 첨부파일이 있을것이기 때문에 attachment들을 ArrayList에 담을예정 => 반드시 1개이상은 담김(대표이미지)
 			
 			ArrayList<Attachment> list = new ArrayList();
 			
