@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="com.kh.board.model.service.BoardService"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+    <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnOpen"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnMessage"/>
+    <fullyQualifiedTypeName name="javax.websocket.Session"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="javax.websocket.EndpointConfig"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+</qualifiedTypeNameHistroy>

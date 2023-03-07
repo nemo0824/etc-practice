@@ -1,0 +1,5 @@
+package com.kh.websocket.model.vo;
+
+public class Message {
+
+}

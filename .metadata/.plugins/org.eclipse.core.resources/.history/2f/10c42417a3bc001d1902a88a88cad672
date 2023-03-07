@@ -1,0 +1,5 @@
+package com.kh.websocket;
+
+public class ChattingServer {
+
+}
