@@ -21,7 +21,7 @@
    <c:set var="num2" value="0.75" />
    <c:set var="num3" value="50000" />
    
-   일반 출력시 : ${num1} <br>
+   일반 출력시 : ${num1} <br>                    
    세자리마다 구분해서 출력하고 싶으면 : <fmt:formatNumber value="${num1 }"/> <br>
    숫자를 그대로 출력하고 싶으면 : <fmt:formatNumber value="${num1 }" groupingUsed="false"/> <br>
    <!-- 
