@@ -1,16 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이메일 아이디 찾기</title>
-</head>
-<style>
-     div {
-    box-sizing: border-box;
-    border: 1px solid red; 
- }
+
+@charset "utf-8";
+
+
 
  body, button, input, select, table, textarea {
     font-family: 'Noto Sans KR', sans-serif;
@@ -37,7 +28,6 @@ input, textarea {
     border: 0;
     resize: none;
     border-radius: 0;
-    -webkit-appearance: none;
     background-color: rgba(0,0,0,0);
 }
 
@@ -103,7 +93,10 @@ input, textarea {
 
 .tab_link { position: relative; display: block; padding-top: 1.8rem; height: 9.6rem;
 }
-/* 이메일 아이디 찾기 */
+
+
+
+
 .content{
     margin-left: auto;
     margin-right: auto;
@@ -118,8 +111,12 @@ input, textarea {
 }
 
 .join_title { 
-    padding-bottom: 5px; 
+    padding-bottom: 20px; 
     text-align: center; 
+    width: 100%;
+    font-size: 3rem;
+    letter-spacing: -.015rem;
+    line-height: 2.2rem;
     }
 
 .join_btn_box { padding-top: 4.5rem;}
@@ -133,45 +130,40 @@ input, textarea {
     color: #fff;
     cursor: default;
 }    
+
+.input_txt {
+    padding: .8rem 0;
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: -.015rem;
+    line-height: 2.2rem;
+    border-bottom: .2rem solid #ebebeb;
+}
+
+.birth_box{
+    padding: .8rem 0;
+    width: 100%;
+    font-size: 1.5rem;
+    letter-spacing: -.015rem;
+    line-height: 2.2rem;
+    border-bottom: .2rem solid #ebebeb;
+}
+.radio_agree{
+    padding: 0rem 0;
+    width: 100%;
+    letter-spacing: -.015rem;
+    line-height: 2.2rem;
+    border-bottom: .2rem solid #ebebeb;
+}
+
+#dd{
+    text-align: center;
+}
+
 .input_txt { padding-right: 3rem; height: 3.8rem; }
 
-
-</style>
-<body>
-    <div class="wrap">
-        <div class="content lg">
-            <div class="help_area">
-                <div>
-                    <h2 class="help_title">이메일 아이디 찾기</h2>
-                    <div class="help_notice">
-                        <p class="notice_txt">
-                            "가입 시 등록한 휴대폰 번호를 입력하면" <br>
-                            "이메일 주소의 일부를 알려드립니다."
-                        </p>
-                    </div>
-                    <div class="input_box">
-                        <h3 class="input_title">휴대폰 번호</h3>
-                        <div class="input_item">
-                            <input type="tel" placeholder="가입하신 휴대폰 번호" class="input_txt">
-                        </div>
-                    </div>
-                    <div class="emailsearch_btn_box">
-                        <input type="submit" disabled="disabled"  class="btn full solid disabled" id="emailsearch_btn" value="이메일 아이디 찾기"> </input>
-                        
-                    </div>
-                       
-
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</body>
-</html>
+.email_disagree, .email_agree{
+    height: 50px;
+    width: px;
+    font-size: 20px;
+}
