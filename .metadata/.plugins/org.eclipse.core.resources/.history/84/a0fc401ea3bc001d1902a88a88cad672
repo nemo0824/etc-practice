@@ -1,9 +1,0 @@
-package com.kh.websocket;
-
-
-// 일반 클래스를 웹소켓 서버로 등록하기 위한 방법
-
-
-public class ChattingServer {
-
-}
