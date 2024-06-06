@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>차가 필요한 모든 순간, 쏘카</title>
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"> 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+   
+    
+    <style>
+
+body *{
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+     overflow-x: visible;
+        }
+
+html * {
+    margin: 0;
+    padding: 0;
+    box-sizing : border-box;
+        } 
+
+
+header{
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    z-index: 100;
+}
+
+
+
+
+
+.header-wrapper{
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo-img{
+    width: 112px;
+    height: 30px;
+    background-image: url(../img/logo-blue.svg);
+    background-repeat: no-repeat;
+    background-size: 112px 23px;
+   
+
+}
+
+.hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+}
+
+/* 본문 */
+.intro-container{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+.intro{
+    margin: 100px auto;
+    width: 800px;
+}
+
+.intro-title{
+    font-size: 35px;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-weight: bold;
+    color: #374553;
+    transition: .5s;
+}
+
+.intro-title::after{
+    display: inline-block;
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #00B8FF;
+    margin-left: 5px;
+}
+
+.intro-text{
+    font-size: 18px;
+    line-height: 1.5;
+    letter-spacing: -0.025em;
+    font-weight: bold;
+    color: #aaa;
+    margin-top: 16px;
+    transition: .5s;
+}
+
+.intro-img{
+    padding: 50px 0;
+    transition: .5s;
+}
+
+.intro-img img{
+    max-width: 800px;
+    max-height: 600px;
+    width: 100%;
+    height: auto;
+}
+
+.random-user-container{
+    position: relative;
+    width: 100%;
+    height: 444px;
+    padding: 64px 0 80px 0;
+    background-color: #F7F8F9;
+    box-sizing: border-box;
+}
+
+.random-user{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.random-user h2{
+    text-align: center;
+    font-size: 35px;
+    line-height: 1.5;
+    color: #aaa;
+    z-index: 2;
+}
+
+.blue-text{
+    color: #00B8FF;
+}
+
+#number{
+    color: #00B8FF;
+}
+
+.random-up{
+    font-weight: bold;
+}
+
+.random-user-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #00B8FF;
+    transform: skewX(-30deg) translateX(80%);
+    top: 0;
+    z-index: 1;
+    transition: .5s;
+}
+
+
+footer{
+    width: 100%;
+    padding: 40px 18px 100px;
+    background-color: #28323C;
+    box-sizing: border-box;
+}
+
+.footer-wrapper{
+    max-width: 980px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.sns-links{
+    display: grid;
+    grid-template-columns: repeat(4, 30px);
+    column-gap: 10px;
+}
+
+.sns-icon-img img{
+    margin: 20px;
+    width: 30px;
+    height: 30px;
+}
+
+.footer-nav{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
+.footer-nav li{
+    margin: 0 20px 8px 0;
+}
+
+.footer-nav li a{
+    font-size: 15px;
+    color: #C5C8CE;
+}
+
+.footer-nav li .accent{
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+}
+
+.corp-area{
+    display: flex;
+    width: 100%;
+    margin-top: 8px;
+    
+}
+
+.corp-left, .corp-right{
+    width: 50%;
+}
+
+.corp-left dl{
+    display: flex;
+}
+
+.corp-left dd{
+    margin-left: 2px;
+}
+
+.corp-left dl, .corp-right ul{
+    font-size: 13px;
+    line-height: 1.7;
+    color: #646F7C;
+}
+
+.corp-right li a{
+    color: #C5C8CE;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-left: 3px;
+}
+
+
+.app-img{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background-image: url(../img/i-appicon.svg);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    border-radius: 12px;
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+    opacity: 0;
+    transition: .5s;
+}
+
+.socar-download{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    letter-spacing: -0.03em;
+    opacity: 0;
+    transition: .5s;
+}
+
+.socar-download::after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../img/arrow-down.svg);
+    background-repeat: no-repeat;
+    background-size: 20px;
+    top: 50%;
+    transform: translate(10px, -50%);
+}
+
+
+.download-app-bg{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 36px;
+    background-color: #00B8FF;
+    transform: skewX(-30deg) translateX(0);
+    z-index: -1;
+    transition: .5s;
+}
+
+
+
+    header{
+        height: 52px;
+        padding: 0 18px;
+    }
+
+    .header-wrapper{
+        height: 52px;
+    }
+
+    .main-logo-img{
+        width: 100px;
+        height: 30px;
+        background-size: 100px 20px;
+    }
+
+
+    .main-title{
+        background-image: url(../img/main_visual_mobile.jpg);
+        background-position: top;
+    }
+
+    .title_text{
+        font-size: 40px;
+    }
+
+
+    .intro-container{
+        padding: 0 22px;
+    }
+
+
+    .random-user-container{
+        height: 304px;
+    }
+    
+    .random-user h2{
+        font-size: 25px;
+    }
+
+
+
+
+    footer{
+        padding: 40px 18px 72px;
+    }
+
+    .footer-nav li{
+        margin: 0 20px 4px 0;
+    }
+
+    .footer-nav li a{
+        font-size: 13px;
+        color: rgb(255, 255, 255);
+    }
+
+    .corp-area{
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 8px;
+    }
+
+    .corp-left, .corp-right{
+        width: 50%;
+    }
+
+
+    .corp-left dl, .corp-right ul{
+        font-size: 12px;
+    }
+
+
+    .download-app{
+        width: 100%;
+        height: 56px;
+    }
+
+    .app-img{
+        width: 40px;
+        height: 40px;
+        background-size: 40px;
+        left: 24px;
+        border-radius: 8px;
+    }
+
+
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+   
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*슬라이드*/
+
+.slide {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  box-sizing : border-box;
+  position: relative;
+  width: 100%;
+  user-select: none;
+}
+.slide_item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+
+
+  transition: left 0.15s;
+}
+.slide_button {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: calc(50% - 16px);
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  background-color: #cccc;
+  cursor: pointer;
+}
+
+.slide_prev_button {
+  left: 10px;
+  
+}
+.slide_next_button {
+  right: 10px;
+
+}
+
+
+#title_text{
+    z-index: 500;
+    color: #fff;
+    font-size: 66px;
+    font-weight: bold;
+    line-height: 1.4;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgb(0 0 0/ 40%);
+    transition: .5s;
+    font-size: 40px;
+    background-position: top;
+    position: absolute;
+    text-align: center;
+    
+}
+
+.slide_item.item1 {
+   width: 100%;
+   height: auto;
+   background-size: cover;
+   margin: 0;
+   padding: 0;
+   box-sizing : border-box;
+}
+
+.slide_item.item2 {
+    width: 100%;
+    height: auto;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+    
+}
+.slide_item.item3 {
+    
+    height: auto;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+    
+}
+.slide_item.item4 {
+    
+    height: auto;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+}
+.slide_item.item5 {
+    
+    height: auto;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+     box-sizing : border-box;
+}
+
+
+ul,
+li {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.slide_pagination {
+
+  display: flex;
+  gap: 5px;
+  position: absolute;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.slide_pagination > li {
+  
+  color: #7fb5ff88;
+  cursor: pointer;
+  font-size: 25px;
+}
+.slide_pagination > li.active {
+ 
+  color: #7fb5ff;
+}
+
+.slide_item_duplicate {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 0px;
+  width: 100%;
+  height: 300px;
+  flex-shrink: 0;
+  transition: left 0.15s;
+}
+
+
+/* 햄버거 버튼*/
+.menu {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  max-width: 0;
+  transition: 0.2s ease;
+  z-index: 100;
+  background-color: #374553;
+}
+
+.burger-icon {
+  cursor: pointer;
+  display: inline-block;
+  position: absolute;
+  z-index: 200;
+  padding: 8px 0;
+  top: 4px;
+  right: 4px;
+  user-select: none;
+  width: auto;
+  margin: 0;
+}
+
+.burger-icon .burger-sticks {
+  background: #00B8FF;
+  display: block;
+  height: 3px;
+  position: relative;
+  transition: .2s ease-out;
+  width: 30px;
+  
+  
+
+}
+
+.burger-icon .burger-sticks:before,
+.burger-icon .burger-sticks:after {
+  background:#00B8FF;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+  z-index: 100;
+  
+  
+  
+}
+
+.burger-icon .burger-sticks:before {
+  top: 5px;
+}
+
+.burger-icon .burger-sticks:after {
+  top: -5px;
+  
+}
+
+.burger-check {
+  display: none;
+}
+
+.burger-check:checked~.menu {
+  max-width: 200px;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks {
+  background: transparent;
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:before {
+  transform: rotate(-45deg);
+}
+
+.burger-check:checked~.burger-icon .burger-sticks:after {
+  transform: rotate(45deg);
+}
+
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
+.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+  top: 0;
+}
+
+.hamburger-menu-1>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+}
+
+.hamburger-menu-2>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+    
+}
+
+.hamburger-menu-3>li>a{
+    padding: 14px 40px;
+    display: block;
+    font-size: 14pt;
+    color: #fff;
+    letter-spacing: -0.03em;
+    font-family: "AvenirLTPro-Heavy", 'sdg-m', sans-serif;
+    
+}
+
+.hamburger-container{
+    background-color: #374553;
+    height: 100vh;
+  
+   
+  
+    
+}
+
+.hamburger-container>ul>li>a:hover{
+    color: #00B8FF;
+    
+}
+
+.slide_item > img{
+    width: 100%;
+}
+
+/* 하단고정배너 */
+    #btn-app.shadow {
+    box-shadow: 64px -2px 19px -4px rgb(0 0 0 / 20%);
+    }
+
+    #btn-app {
+    z-index: 101;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    width: 340px;
+    height: 90px;
+    overflow: hidden;
+    background-color: transparent;
+    }
+
+    #btn-app #blue {
+    top: 0px;
+    width: 100%;
+    z-index: -1;
+    height: 100%;
+    background-color: #00b8ff;
+    }
+    #btn-app.showing {
+        -webkit-transition: all 450ms ease;
+        opacity: 1;
+    }
+
+    #blue {
+    position: absolute;
+    bottom: -1px;
+    background: rgba(0,184,255,1);
+    transform-origin: bottom left;
+    }
+
+    #btn-app img {
+    position: absolute;
+    z-index: 9;
+    top: 10%;
+    left: 7px;
+    width: auto;
+    height: 60px;
+    border-radius: 12px;
+    
+    }
+
+    #btn-app span {
+    font-size: 15pt;
+    letter-spacing: -0.03em;
+    display: block;
+    line-height: 1.3;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+    #btn-app #blue.showing {
+        transition: transform .8s cubic-bezier(0.165, 0.840, 0.440, 1.000), opacity .5s ease;
+        left: 0%;
+        opacity: 1;
+        transform: skewX(-30deg) translate3d(0, 0, 0);
+    }
+
+    #btn-app img.showing {
+    opacity: 1;
+    -webkit-transition: all 250ms ease-in;
+    box-shadow: 0 3px 3px -2px rgb(0 0 0 / 20%), 0 3px 4px 0 rgb(0 0 0 / 14%), 0 1px 8px 0 rgb(0 0 0 / 12%);
+}
+    
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-wrapper">
+            <div class="main-logo">
+                <a href="#">
+                    <div class="main-logo-img"></div>
+                    <h1 class="hidden">SOCAR</h1>
+                </a>
+
+                
+            </div>
+            <input class="burger-check" type="checkbox" id="burger-check" />
+            <label class="burger-icon" for="burger-check">
+              <span class="burger-sticks">
+             </span></label>
+          <div class="menu">
+            
+            <div style="width: 200px;"></div>
+          
+            <div class="hamburger-container">
+              <ul class="hamburger-menu-1">
+                  <li><a href="#">이용 안내</a></li>
+                  <li><a href="#">요금 안내</a></li>
+                  <li><a href="#">혜택 안내</a></li>
+                  <li><a href="#">쏘카존 개설 신청</a></li>
+                  <hr>
+              </ul>
+              <ul class="hamburger-menu-2">
+                  <li><a href="#">쏘카의 서비스</a></li>
+                    
+                     <li class="indent"><a href="#">쏘카 비즈니스</a></li>
+                     <li class="indent"><a href="#">쏘카 플랜</a></li>  
+                   
+                <hr>              
+              </ul>
+              <ul class="hamburger-menu-3">
+                  <li><a href="connect/쏘카회사소개.html">회사소개</a></li>
+                  <li><a href="#">공고</a></li>
+              </ul>
+          </div>
+          </div>
+        </div>
+    
+    </header>
+    <header_2>
+        <div class="slide slide_wrap">
+            
+            <div class="slide_item item1">
+                <img src="img/usp_b.jpg">   
+               
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+              
+            </div>
+            <div class="slide_item item2">
+                <img src="img/usp_a.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+                
+            </div>
+            <div class="slide_item item3">
+                <img src="img/usp_c.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+            </div>
+            <div class="slide_item item4">
+                <img src="img/usp_d.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+            </div>
+            <div class="slide_item item5">
+                <img src="img/usp_e.jpg">
+                <h2 id="title_text"
+                data-aos="fade-up" 
+                data-aos-offset="200" 
+                data-aos-easing="ease-out-cubic"
+                data-aos-duration="2000" >차가 필요한 <br> 모든 순간, 쏘카</h2>
+            </div>
+            <div class="slide_prev_button slide_button">◀</div>
+            <div class="slide_next_button slide_button">▶</div>
+            <ul class="slide_pagination"></ul>
+          </div>
+        </header_2>
+         
+        <section class="intro-container">
+            <div class="intro">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <h2 class="intro-title sa-intro mv-left-intro">24시간 언제나</h2>
+                    <p class="intro-text sa-intro mv-left-intro">
+                        한밤중이나 주말에도 스마트폰으로<br>
+                        시간에 구애받지 않고<br>
+                        쏘카와 함께 이동하세요.
+                    </p>
+                </div>
+                <div class="intro-img img-a sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <img src="img/usp_a.jpg" alt="스마트폰으로 쏘카를 이용하는 사람">
+                </div>
+            </div>
+            <div class="intro">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <h2 class="intro-title sa-intro mv-left-intro">원하는 곳에서</h2>
+                    <p class="intro-text sa-intro mv-left-intro">
+                        내 주변 3분 거리 쏘카존에서<br>
+                        혹은 내가 있는 곳으로 쏘카를 불러<br>
+                        어디서나 편하게 출발하세요.
+                    </p>
+                </div>
+                <div class="intro-img img-b sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <img src="img/usp_b.jpg" alt="쏘카를 이용하는 사람들">
+                </div>
+            </div>
+            <div class="intro">
+                <div class="intro-text-box"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <h2 class="intro-title sa-intro mv-left-intro">필요한 시간만큼</h2>
+                    <p class="intro-text sa-intro mv-left-intro">
+                        간단한 장보기부터 주말여행까지<br>
+                        10분 단위로 원하는 만큼만 이동하세요.
+                    </p>
+                </div>
+                <div class="intro-img img-c sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <img src="img/usp_c.jpg" alt="쏘카를 이용해 장을 보는 사람들">
+                </div>
+            </div>
+            <div class="intro"
+            data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                <div class="intro-text-box">
+                    <h2 class="intro-title sa-intro mv-left-intro">다양한 차종을</h2>
+                    <p class="intro-text sa-intro mv-left-intro">
+                        연인과의 드라이브부터 가족 캠핑까지<br>
+                        상황에 맞게 50여 종의 차량을<br>
+                        선택해서 이용하세요.
+                    </p>
+                </div>
+                <div class="intro-img img-d sa-intro mv-left-intro"
+                data-aos="fade-right"
+                data-aos-offset="200"
+                data-aos-delay="0"
+                data-aos-duration="1000"
+                data-aos-easing="ease-in-out"
+                data-aos-mirror="true"
+                data-aos-once="false"
+                data-aos-anchor-placement="top-center">
+                    <img src="img/usp_d.jpg" alt="주차장에 주차된 쏘카 차량들">
+                </div>
+            </div>
+        </section>
+        <section class="random-user-container">
+            <div class="random-user">
+                <h2>
+                    
+                    <span class="blue-text">
+                        <script>
+                        var jbRandom = Math.random();
+
+                        // 3자리마다 컴마 찍을수 있도록 
+                        let result = Math.floor( jbRandom * 10000000).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+                        document.write('<p>'+ result + '명의 회원이 쏘카와<br> </p>' ); 
+                        </script></span> 
+                    
+                    
+                    함께하고 있습니다.<br>
+                    지금 바로 <span class="blue-text">쏘카 드라이브</span>를<br>
+                    시작하세요.
+                </h2>
+            </div>
+            <div class="random-user-bg sa-random-bg mv-left-bg"></div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-wrapper">
+            <ul class="sns-links">
+                <li>
+                    <a href="#">
+                        <div class="sns-icon-img">
+                            <img src="img/i-instagram.svg" alt="Instagram icon">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="sns-icon-img">
+                            <img src="img/i-facebook.svg" alt="Facebook icon">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="sns-icon-img">
+                            <img src="img/i-youtube.svg" alt="Youtube icon">
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <div class="sns-icon-img">
+                            <img src="img/i-blog.svg" alt="Blog icon" >
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="footer-nav">
+                <li>
+                    <a href="https://www.socarcorp.kr/">회사소개</a>
+                </li>
+                <li>
+                    <a href="https://www.socarcorp.kr/careers/jobs">인재채용</a>
+                </li>
+                <li>
+                    <a href="https://www.socar.kr/nanumcar">나눔카</a>
+                </li>
+                <li>
+                    <a href="https://www.socar.kr/terms">이용약관</a>
+                </li>
+                <li>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360048398254" class="accent">개인정보처리방침</a>
+                </li>
+                <li>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360049150593" class="accent">위치정보 이용약관</a>
+                </li>
+                <li>
+                    <a href="https://socar-docs.zendesk.com/hc/ko/articles/360052593593" class="accent">차량손해면책제도</a>
+                </li>
+                <li>
+                    <a href="https://socarhelp.zendesk.com/hc/ko">고객센터</a>
+                </li>
+                <li>
+                    <a href="https://www.socar.kr/">제휴 문의</a>
+                </li>
+            </ul>
+            <div class="corp-area">
+                <div class="corp-left">
+                    <dl>
+                        <dt>주소.</dt>
+                        <dd>제주특별자치도 제주시 연미길 42 (오라삼동)</dd>
+                    </dl>
+                    <dl>
+                        <dt>전화.</dt>
+                        <dd>1661-3315</dd>
+                    </dl>
+                    <dl>
+                        <dt>팩스.</dt>
+                        <dd>02-6969-9333</dd>
+                    </dl>
+                </div>
+                <div class="corp-right">
+                    <ul>
+                        <li>(주)쏘카 통신판매업<a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=6168190529&apv_perm_no=">사업자정보 확인</a></li>
+                        <li>신고: 제 2019-제주오라-3호, 사업자등록번호: 616-81-90529, 대표자: 박재욱</li>
+                        <li>© 2019 SOCAR All rights reserved.</li>
+                        <br><br><br>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div  data-aos="fade-left"
+        data-aos-offset="200"
+        data-aos-delay="0"
+        data-aos-duration="1000"
+        data-aos-easing="ease-in-out"
+        data-aos-mirror="true"
+        data-aos-once="false"
+        data-aos-anchor-placement="top-center" id="btn-app" class="showing shadow"><a href="https://go.socar.kr/sdhv3ZE4r5" target="_blank"
+            rel="noopener noreferrer" style="overflow: hidden;"><span class="cent showing">쏘카 앱 다운로드</span><img
+                id="btn-app" class="cth showing" src="img/하단고정배너.svg" alt="">
+            <div id="blue" class="mvright moveit showing"></div>
+        </a></div>
+    </footer>
+   
+  
+    <script src="./slide.js"></script>
+    
+   
+</body>
+</html>

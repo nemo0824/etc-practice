@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>배경관련스타일</title>
+    <style>
+        body{
+            background-color: skyblue;
+        }
+        #div-bg{
+            background-color: white;
+            border: 30px dashed blue;
+            padding: 20px;
+            width: 50%;
+            /* div의 content의 가로길이는 부모(body)요소의 50%로 지정함.*/
+            box-sizing: border-box;
+            /* <매우중요> 가로길이를 border까지 포함해서 지정함 */
+        }
+        .div-test{
+            margin: 30px;
+            border: 10px dashed;
+            padding: 20px;
+            background-color: yellow;
+        }
+        #div1{
+            background-clip: border-box; /* 기본값 */
+        }
+        #div2{
+            background-clip: padding-box;
+        }
+        #div3{
+            background-clip: content-box;
+        }
+        #bg-img{
+            border: 1px solid black;
+            width: 70%;
+            height: 800px;
+            background-image: url("resources/image/bono.jpg");
+            background-repeat: repeat-y; /* 사진들이 세로로만 반복됨 */
+            background-size: contain; /* 가로 세로 상관없이 둘중에 하나가 가득찰때까지 크기를 맞춤*/
+            background-position: 50% 50%; /* center center 또는 50px 50px */
+            background-attachment: fixed; /* 스크롤 이동이 있어도 그자리 그대로 고정 */
+        }
+    </style>
+</head>
+
+<body>
+    <h1> 배경 관련 스타일(background~) </h1>
+    <h3> background-color : 배경색을 지정하고자 할 때 사용</h3>
+    <div id="div-bg">
+        품에 쓸쓸한 같지 위하여서. 바이며, 봄바람을 같이, 있다. 가슴에 속에 얼음과 간에 끓는 듣기만 붙잡아 기쁘며, 교향악이다. 가지에 영락과 얼음에 역사를 같은 힘차게 듣는다. 있는 착목한는 아니한 봄날의 가는 안고, 밝은 이것이다. 돋고, 피가 자신과 안고, 있는 칼이다. 얼음에 위하여서 위하여 이상 장식하는 우는 힘있다. 품으며, 거선의 무한한 어디 만천하의 대중을 새가 인간의 장식하는 부패뿐이다. 속에서 몸이 소금이라 뿐이다.   
+    </div>
+    <br>
+    <h3> background-clip : 배경을 적용시키고자 하는 범위를 지정할 때 사용 </h3>
+    <pre>
+        선택자{
+            background-clip : border-box(기본값)/padding-box/content-box;
+        }
+    </pre>
+    <div class="div-test" id="div1">품에 쓸쓸한 같지 위하여서. 바이며, 봄바람을 같이, 있다. 가슴에 속에 얼음과 간에 끓는 듣기만 붙잡아 기쁘며, 교향악이다. 가지에 영락과 얼음에 역사를 같은 힘차게 듣는다. 있는 착목한는 아니한 봄날의 가는 안고, 밝은 이것이다. 돋고, 피가 자신과 안고, 있는 칼이다. 얼음에 위하여서 위하여 이상 장식하는 우는 힘있다. 품으며, 거선의 무한한 어디 만천하의 대중을 새가 인간의 장식하는 부패뿐이다. 속에서 몸이 소금이라 뿐이다.</div>
+    <div class="div-test" id="div2">품에 쓸쓸한 같지 위하여서. 바이며, 봄바람을 같이, 있다. 가슴에 속에 얼음과 간에 끓는 듣기만 붙잡아 기쁘며, 교향악이다. 가지에 영락과 얼음에 역사를 같은 힘차게 듣는다. 있는 착목한는 아니한 봄날의 가는 안고, 밝은 이것이다. 돋고, 피가 자신과 안고, 있는 칼이다. 얼음에 위하여서 위하여 이상 장식하는 우는 힘있다. 품으며, 거선의 무한한 어디 만천하의 대중을 새가 인간의 장식하는 부패뿐이다. 속에서 몸이 소금이라 뿐이다.</div>
+    <div class="div-test" id="div3">품에 쓸쓸한 같지 위하여서. 바이며, 봄바람을 같이, 있다. 가슴에 속에 얼음과 간에 끓는 듣기만 붙잡아 기쁘며, 교향악이다. 가지에 영락과 얼음에 역사를 같은 힘차게 듣는다. 있는 착목한는 아니한 봄날의 가는 안고, 밝은 이것이다. 돋고, 피가 자신과 안고, 있는 칼이다. 얼음에 위하여서 위하여 이상 장식하는 우는 힘있다. 품으며, 거선의 무한한 어디 만천하의 대중을 새가 인간의 장식하는 부패뿐이다. 속에서 몸이 소금이라 뿐이다.</div>
+    <hr>
+
+
+    <h3> 배경 이미지 테스트 </h3>
+    <pre>
+        선택자{
+            background-image : url(이미지경로);
+            background-repeat : repeat/repeat-x/repeat-y/no-repeat;
+            background-size : auto/contain/cover/px px/%;
+            background-position : 좌/우/가운데 중1 위/아래/가운데중1 px/% %;
+            background-attachment : scroll/fixed;
+        }
+    </pre>
+    <div id="bg-img"></div>
+
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+</body>
+</html>
